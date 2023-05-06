@@ -11,14 +11,14 @@ describe("Customer", () => {
   );
 
   it("should throw error when id is empty", () => {
-    expect(() => {
-      const customer = new Customer("", "John Doe", address);
-    }).toThrowError("Id is required");
+    expect(() => new Customer("", "John Doe", address)).toThrowError(
+      "Id is required"
+    );
   });
 
   it("should throw error when name is empty", () => {
-    expect(() => {
-      const customer = new Customer("1", "", address);
-    }).toThrowError("Name is required");
+    expect(() => new Customer("1", "", address)).toThrowError(
+      "Name is required"
+    );
   });
 });
