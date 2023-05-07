@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import Customer from "../entities/customer";
 import Order from "../entities/order";
 import OrderItem from "../entities/order-item";
+
 export default class OrderService {
   static placeOrder(customer: Customer, items: OrderItem[]): Order {
     if (!customer) {
