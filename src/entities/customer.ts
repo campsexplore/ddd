@@ -3,9 +3,10 @@ import Address from "./address";
 export default class Customer {
   private _id: string;
   private name: string;
-  private address: Address;
+  private address?: Address;
+  private _rewardPoints: number = 0;
 
-  constructor(id: string, name: string, address: Address) {
+  constructor(id: string, name: string, address?: Address) {
     this._id = id;
     this.name = name;
     this.address = address;
@@ -22,15 +23,19 @@ export default class Customer {
       throw new Error("Name is required");
     }
 
-    if (!this.address) {
-      throw new Error("Address is required");
-    }
-
     return true;
   }
 
   get id() {
     return this._id;
+  }
+
+  get rewardPoints() {
+    return this._rewardPoints;
+  }
+
+  addRewardPoints(points: number) {
+    this._rewardPoints += points;
   }
 
   setAddress(address: Address) {

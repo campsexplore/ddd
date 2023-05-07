@@ -21,4 +21,15 @@ describe("Customer", () => {
       "Name is required"
     );
   });
+
+  it("should add reward points", () => {
+    const customer = new Customer("1", "John Doe", address);
+    expect(customer.rewardPoints).toBe(0);
+
+    customer.addRewardPoints(100);
+    expect(customer.rewardPoints).toBe(100);
+
+    customer.addRewardPoints(50);
+    expect(customer.rewardPoints).toBe(150);
+  });
 });
