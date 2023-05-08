@@ -2,14 +2,15 @@ import Address from "./address";
 
 export default class Customer {
   private _id: string;
-  private name: string;
-  private address?: Address;
+  private _name: string;
+  private _address?: Address;
+  private _active: boolean = true;
   private _rewardPoints: number = 0;
 
   constructor(id: string, name: string, address?: Address) {
     this._id = id;
-    this.name = name;
-    this.address = address;
+    this._name = name;
+    this._address = address;
 
     this.validate();
   }
@@ -19,7 +20,7 @@ export default class Customer {
       throw new Error("Id is required");
     }
 
-    if (!this.name) {
+    if (!this._name) {
       throw new Error("Name is required");
     }
 
@@ -28,6 +29,18 @@ export default class Customer {
 
   get id() {
     return this._id;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get address() {
+    return this._address;
+  }
+
+  get active() {
+    return this._active;
   }
 
   get rewardPoints() {
@@ -39,6 +52,6 @@ export default class Customer {
   }
 
   setAddress(address: Address) {
-    this.address = address;
+    this._address = address;
   }
 }

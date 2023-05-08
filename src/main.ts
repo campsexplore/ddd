@@ -3,7 +3,7 @@ import Customer from "./domain/entities/customer";
 import Order from "./domain/entities/order";
 import OrderItem from "./domain/entities/order-item";
 
-let address = new Address("1", "123 Main St", "Anytown", "Anystate", "12345");
+let address = new Address("1", "123 Main St", "Anytown", 0);
 let customer = new Customer("1", "John Doe", address);
 
 // Agregado por Objeto

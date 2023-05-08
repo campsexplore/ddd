@@ -12,3 +12,14 @@ model Product {
   name  String
   price Float
 }
+
+model Customer {
+  id           String  @id
+  name         String
+  street       String?
+  number       Int?
+  zipcode      String?
+  city         String?
+  active       Boolean
+  rewardPoints Int
+}
