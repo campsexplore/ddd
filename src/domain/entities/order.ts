@@ -39,4 +39,25 @@ export default class Order {
       0
     );
   }
+
+  changeItems(items: OrderItem[]): void {
+    this._items = items;
+    this._total = this.calculateTotal();
+  }
+
+  get id(): string {
+    return this._id;
+  }
+
+  get customerId(): string {
+    return this._customerId;
+  }
+
+  get items(): OrderItem[] {
+    return this._items;
+  }
+
+  get total(): number {
+    return this._total;
+  }
 }
