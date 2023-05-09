@@ -15,7 +15,7 @@ describe("Customer Repository", () => {
     number: 1,
     street: "Street 1",
     zipcode: "Zipcode 1",
-    rewardPoints: 0,
+    reward_points: 0,
   };
   const address = new Address("Street 1", "City 1", "Zipcode 1", 1);
 
@@ -48,7 +48,7 @@ describe("Customer Repository", () => {
         number: 2,
         street: "Street 2",
         zipcode: "Zipcode 2",
-        rewardPoints: 10,
+        reward_points: 10,
       });
 
     const customerRepository = new CustomerRepository();
@@ -84,7 +84,7 @@ describe("Customer Repository", () => {
       number: 2,
       street: "Street 2",
       zipcode: "Zipcode 2",
-      rewardPoints: 10,
+      reward_points: 10,
     });
   });
 
@@ -109,7 +109,7 @@ describe("Customer Repository", () => {
         number: 1,
         street: "Street 1",
         zipcode: "Zipcode 1",
-        rewardPoints: 0,
+        reward_points: 0,
       },
       {
         id: "2",
@@ -119,7 +119,7 @@ describe("Customer Repository", () => {
         number: 1,
         street: "Street 1",
         zipcode: "Zipcode 1",
-        rewardPoints: 0,
+        reward_points: 0,
       },
     ];
     prismaMock.customer.findMany.mockResolvedValueOnce(mockResult);

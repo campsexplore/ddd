@@ -3,12 +3,14 @@ import { prismaMock } from "../../infra/database/prisma/prisma.mock";
 import ProductRepository from "./product";
 
 describe("Product Repository", () => {
+  const mockResult = {
+    id: "1",
+    name: "Product 1",
+    price: 10,
+    order_id: "1",
+  };
+
   it("should create a product", async () => {
-    const mockResult = {
-      id: "1",
-      name: "Product 1",
-      price: 10,
-    };
     prismaMock.product.findFirst.mockResolvedValueOnce(mockResult);
 
     const productRepository = new ProductRepository();
@@ -26,11 +28,6 @@ describe("Product Repository", () => {
   });
 
   it("should update a product", async () => {
-    const mockResult = {
-      id: "1",
-      name: "Product 1",
-      price: 10,
-    };
     prismaMock.product.findFirst
       .mockResolvedValue(null)
       .mockResolvedValueOnce(mockResult)
@@ -38,6 +35,7 @@ describe("Product Repository", () => {
         id: "1",
         name: "Product 2",
         price: 20,
+        order_id: "1",
       });
 
     const productRepository = new ProductRepository();
@@ -68,15 +66,11 @@ describe("Product Repository", () => {
       id: "1",
       name: "Product 2",
       price: 20,
+      order_id: "1",
     });
   });
 
   it("should find a product", async () => {
-    const mockResult = {
-      id: "1",
-      name: "Product 1",
-      price: 10,
-    };
     prismaMock.product.findFirst.mockResolvedValueOnce(mockResult);
     const product = new Product("1", "Product 1", 10);
 
@@ -93,11 +87,13 @@ describe("Product Repository", () => {
         id: "1",
         name: "Product 1",
         price: 10,
+        order_id: "1",
       },
       {
         id: "2",
         name: "Product 2",
         price: 20,
+        order_id: "1",
       },
     ];
     prismaMock.product.findMany.mockResolvedValueOnce(mockResult);

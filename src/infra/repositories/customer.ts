@@ -14,7 +14,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
         street: entity.address?.street,
         zipcode: entity.address?.zip,
         id: entity.id,
-        rewardPoints: entity.rewardPoints,
+        reward_points: entity.rewardPoints,
       },
     });
   }
@@ -30,7 +30,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
         number: entity.address?.number,
         street: entity.address?.street,
         zipcode: entity.address?.zip,
-        rewardPoints: entity.rewardPoints,
+        reward_points: entity.rewardPoints,
       },
     });
   }
